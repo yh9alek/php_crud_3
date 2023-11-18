@@ -1,0 +1,15 @@
+{
+    "name": "yh9pl/php_crud_3",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yohan Alek",
+            "email": "yh9dev@gmail.com"
+        }
+    ],
+    "require": {}
+}
