@@ -18,6 +18,7 @@ class Database
             $statment = $this->pdo->prepare('SELECT * FROM products ORDER BY create_date DESC');
         }
         $statment->execute();
-        $products = $statment->fetchAll(PDO::FETCH_ASSOC);
+        $products = $statment->fetchAll(\PDO::FETCH_ASSOC);
+        return $products;
     }
 }
