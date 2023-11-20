@@ -23,13 +23,17 @@
     <?php foreach($products as $i => $product): ?>
         <tr>
             <th scope="row"><?= $i + 1 ?></th>
-            <td><img src="/<?= $product['image'] ?>" class="thumb-image"></td>
+            <td>
+                <?php if($product['image']): ?>
+                <img src="/<?= $product['image'] ?>" class="thumb-image">
+                <?php endif; ?>
+            </td>
             <td><?= $product['title'] ?></td>
             <td><?= $product['price'] ?></td>
             <td><?= $product['create_date'] ?></td>
             <td>
-                <a href="update.php?id=<?= $product['id'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
-                <form style="display: inline-block;" action="delete.php" method="post">
+                <a href="/products/update?id=<?= $product['id'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
+                <form style="display: inline-block;" action="products/delete" method="post">
                     <input type="hidden" name="id" value="<?= $product['id'] ?>">
                     <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
                 </form>
